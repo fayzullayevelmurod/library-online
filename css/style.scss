@@ -1,3 +1,20 @@
+// fonts
+$font-Manrope: 'Manrope', sans-serif;
+$font-Onest: 'Onest', sans-serif;
+$font-Inter: 'Inter', sans-serif;
+// fonts
+
+// colors
+$color-grey: #7B8781;
+$color-black: #000000;
+$color-blue: #4867F6;
+$color-white: #ffffff;
+$color-grey100: #C9CADC;
+$color-dark-grey: #6A6773;
+
+
+// colors
+
 // mixin
 @mixin flex-full-center {
     display: flex;
@@ -56,7 +73,7 @@ html {
 }
 
 body {
-
+    font-family: $font-Onest;
     font-style: normal;
 }
 
@@ -86,21 +103,129 @@ address {
     margin: 0 auto;
 }
 
-// bootstrap
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-label {
-    padding: 0;
-    margin: 0;
-    margin-bottom: 0;
-    padding-bottom: 0;
+.btn {
+    &_white {
+        @include flex-full-center();
+        height: 50px;
+        width: 407px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 14px;
+        color: $color-black;
+        border-radius: 10px;
+        border: 1px solid $color-grey100;
+    }
+
+    &_blue {
+        @include flex-full-center();
+        height: 50px;
+        width: 407px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 14px;
+        color: $color-white;
+        border-radius: 10px;
+        background: $color-blue;
+    }
 }
-// bootstrap
+
+.login {
+    display: flex;
+    align-items: stretch;
+    height: 100vh;
+
+    &_img {
+        position: relative;
+
+        .login_logo {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &_form {
+        padding-left: 155px;
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        justify-content: center;
+
+        h6 {
+            font-size: 30px;
+            font-weight: 500;
+            line-height: 30px;
+            color: $color-black;
+            margin: 30px 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+
+            label {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 19.6px;
+                color: $color-dark-grey;
+            }
+
+            input {
+                padding: 15px;
+                border-radius: 10px;
+                height: 50px;
+                border: 1px solid $color-grey;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 19.2px;
+                color: $color-black;
+
+                &::placeholder {
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 19.2px;
+                    color: $color-black;
+                }
+            }
+        }
+
+        .form_btns {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .back_btn {
+            @include flex-center();
+            gap: 10px;
+
+            span {
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 16.8px;
+                font-family: $font-Manrope;
+                color: $color-grey;
+            }
+        }
+    }
+
+    &_block {
+        flex: 1;
+    }
+}
+
+
 
 @import './responsive';
