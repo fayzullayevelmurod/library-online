@@ -88,9 +88,67 @@ address {
 }
 
 .breadcrumb {
+  margin: 10px 0 20px 0;
   display: flex;
   align-items: center;
   gap: 10px;
+}
+.breadcrumb span,
+.breadcrumb a {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.8px;
+  color: #6A6773;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.pagination .prev_icon {
+  margin-right: 10px;
+}
+.pagination .next_icon {
+  margin-left: 10px;
+}
+.pagination a {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #C9CADC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+.pagination a span {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.2px;
+  color: #000000;
+  transition: 0.3s ease;
+}
+.pagination a svg path {
+  transition: 0.3s ease;
+}
+.pagination a:hover {
+  border: transparent;
+  background: #4867F6;
+}
+.pagination a:hover span {
+  color: #ffffff;
+}
+.pagination a:hover svg path {
+  stroke: #ffffff;
+}
+.pagination a.active {
+  background: #4867F6;
+  border: transparent;
+}
+.pagination a.active span {
+  color: #ffffff;
 }
 
 .login {
@@ -184,6 +242,55 @@ address {
 }
 .login_block {
   flex: 1;
+}
+
+.action_books {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 60px 0 50px 0;
+}
+.action_book {
+  width: calc(12.5% - 27px);
+}
+.action_book_img {
+  border-radius: 15px;
+  overflow: hidden;
+}
+.action_book_img img {
+  width: 100%;
+}
+.action_book h6 {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.8px;
+  color: #000000;
+}
+.action_book p {
+  margin: 5px 0 10px 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  color: #6A6773;
+}
+.action_book .comment {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 3px;
+}
+.action_book .comment h5 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.8px;
+  color: #000000;
+}
+.action_book .comment span {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.4px;
+  color: #6A6773;
 }
 
 .footer {

@@ -140,8 +140,77 @@ address {
 }
 
 .breadcrumb {
+    margin: 10px 0 20px 0;
     @include flex-center();
     gap: 10px;
+
+    span,
+    a {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16.8px;
+        color: $color-dark-grey;
+    }
+}
+
+.pagination {
+    @include flex-full-center();
+    gap: 5px;
+
+    .prev_icon {
+        margin-right: 10px;
+    }
+
+    .next_icon {
+        margin-left: 10px;
+    }
+
+    a {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        border: 1px solid $color-grey100;
+        @include flex-full-center();
+        @include transition();
+
+        span {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 19.2px;
+            color: $color-black;
+            @include transition();
+        }
+
+        svg {
+            path {
+                @include transition();
+            }
+        }
+
+        &:hover {
+            border: transparent;
+            background: $color-blue;
+
+            span {
+                color: $color-white;
+            }
+
+            svg {
+                path {
+                    stroke: $color-white;
+                }
+            }
+        }
+    }
+
+    a.active {
+        background: $color-blue;
+        border: transparent;
+
+        span {
+            color: $color-white;
+        }
+    }
 }
 // var
 
@@ -246,6 +315,67 @@ address {
     }
 }
 // login
+
+// action
+.action {
+    &_books {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin: 60px 0 50px 0;
+    }
+
+    &_book {
+        width: calc(100% / 8 - 27px);
+
+        &_img {
+            border-radius: 15px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        h6 {
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 16.8px;
+            color: $color-black;
+        }
+        
+
+        p {
+            margin: 5px 0 10px 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 16.8px;
+            color: $color-dark-grey;
+        }
+
+        .comment {
+            @include flex-center();
+            white-space: nowrap;
+            gap: 3px;
+
+            h5 {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 16.8px;
+                color: $color-black;
+            }
+
+            span {
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 14.4px;
+                color: $color-dark-grey;
+            }
+        }
+    }
+}
+// action
 
 // footer
 .footer {
