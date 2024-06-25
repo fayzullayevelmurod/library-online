@@ -142,6 +142,7 @@ address {
   stroke: #4867F6;
 }
 .pagination a {
+  flex-shrink: 0;
   width: 40px;
   height: 40px;
   border-radius: 10px;
@@ -189,6 +190,9 @@ address {
 .authors_alphabet .full {
   width: 50px;
 }
+.authors_alphabet .full span {
+  text-transform: capitalize;
+}
 .authors_alphabet a {
   flex-shrink: 0;
   width: 36px;
@@ -201,6 +205,7 @@ address {
   transition: 0.3s ease;
 }
 .authors_alphabet a span {
+  text-transform: uppercase;
   font-size: 16px;
   font-weight: 500;
   line-height: 19.2px;
@@ -707,6 +712,9 @@ address {
 @media only screen and (max-width: 650px) {
   .main_container {
     padding: 0 20px;
+  }
+  .pagination a:nth-child(5) {
+    display: none;
   }
   .authors_alphabet {
     margin: 30px 0 40px 0;

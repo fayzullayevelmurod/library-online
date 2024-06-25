@@ -144,6 +144,14 @@
         }
     }
 
+    .pagination {
+        a {
+            &:nth-child(5) {
+                display: none;
+            }
+        }
+    }
+
     .authors_alphabet {
         margin: 30px 0 40px 0;
     }
