@@ -315,6 +315,7 @@ address {
     height: 100vh;
 
     &_img {
+        max-width: 950px;
         position: relative;
 
         .login_logo {
@@ -329,6 +330,14 @@ address {
             object-fit: cover;
             height: 100%;
             width: 100%;
+        }
+
+        .login_table_bg {
+            display: none;
+        }
+
+        .login_mobile_bg {
+            display: none;
         }
     }
 
@@ -348,6 +357,7 @@ address {
         }
 
         form {
+            width: 385px;
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -380,6 +390,13 @@ address {
                     color: $color-black;
                 }
             }
+
+            .forget_password {
+                color: $color-blue;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 19.6px;
+            }
         }
 
         .form_btns {
@@ -387,6 +404,10 @@ address {
             flex-direction: column;
             gap: 15px;
             margin-top: 10px;
+
+            a {
+                width: 100%;
+            }
         }
 
         .back_btn {
@@ -403,9 +424,9 @@ address {
         }
     }
 
-    &_block {
-        flex: 1;
-    }
+    // &_block {
+    //     flex: 1;
+    // }
 }
 // login
 
