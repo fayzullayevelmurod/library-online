@@ -587,7 +587,7 @@ address {
 .categories_block ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 15px 10px;
 }
 .categories_block .book_link {
   font-size: 16px;
