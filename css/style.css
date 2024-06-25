@@ -493,13 +493,35 @@ address {
   .action_book {
     width: calc(14.2857142857% - 26px);
   }
+  .authors_card {
+    gap: 70px;
+  }
+  .authors_card_books .action_book {
+    width: calc(20% - 22px);
+  }
+  .authors_card_books .action_book:nth-child(n+6) {
+    display: none;
+  }
 }
 @media only screen and (max-width: 1300px) {
   .main_container {
     padding: 0 140px;
   }
-  .action_book {
-    width: calc(16.6666666667% - 25px);
+  .main_title {
+    font-size: 26px;
+    line-height: 26px;
+  }
+  .authors_card {
+    gap: 60px;
+  }
+  .authors_card_books .action_book {
+    width: calc(25% - 20px);
+  }
+  .authors_card_books .action_book:nth-child(n+5) {
+    display: none;
+  }
+  .authors_card {
+    gap: 60px;
   }
 }
 @media only screen and (max-width: 1200px) {
@@ -508,6 +530,14 @@ address {
   }
   .action_book {
     width: calc(25% - 23px);
+  }
+  .authors_card {
+    gap: 30px;
+    flex-direction: column;
+  }
+  .authors_card_title {
+    flex-direction: row;
+    width: 100%;
   }
   .footer_top {
     text-align: center;
@@ -537,12 +567,46 @@ address {
   .main_container {
     padding: 0 20px;
   }
+  .authors_alphabet {
+    margin: 30px 0 40px 0;
+  }
   .action_books {
     gap: 20px;
     margin: 40px 0 50px 0;
   }
   .action_book {
     width: calc(33.3333333333% - 14px);
+  }
+  .action_book h6, .action_book p {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .action_book p {
+    margin: 5px 0 10px 0;
+  }
+  .action_book .comment h5 {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .action_book .comment span {
+    font-size: 10px;
+    line-height: 12px;
+  }
+  .action_book .comment img {
+    width: 22px;
+    height: 22px;
+  }
+  .authors_card_title {
+    justify-content: space-between;
+  }
+  .authors_card_books {
+    gap: 20px;
+  }
+  .authors_card_books .action_book {
+    width: calc(33.3333333333% - 13px);
+  }
+  .authors_card_books .action_book:nth-child(n+4) {
+    display: none;
   }
   .footer .footer_white_block {
     border-radius: 0 0 60px 60px;
@@ -552,7 +616,25 @@ address {
   .main_container {
     padding: 0 10px;
   }
+  .main_title {
+    font-size: 24px;
+    line-height: 24px;
+  }
   .action_book {
     width: calc(50% - 10px);
+  }
+  .authors_card_title {
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .authors_card_title h6 {
+    font-size: 18px;
+    line-height: 21px;
+  }
+  .authors_card_books .action_book {
+    width: calc(50% - 10px);
+  }
+  .authors_card_books .action_book:nth-child(n+3) {
+    display: none;
   }
 }/*# sourceMappingURL=style.css.map */
