@@ -238,6 +238,53 @@ address {
         }
     }
 }
+
+.authors_alphabet {
+    margin: 40px 0 60px 0;
+    @include flex-center();
+    gap: 5px;
+    flex-wrap: wrap;
+
+    .full {
+        width: 50px;
+    }
+
+    a {
+        flex-shrink: 0;
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        border: 1px solid $color-grey100;
+        @include flex-full-center();
+        @include transition();
+
+        span {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 19.2px;
+            color: $color-black;
+            @include transition();
+        }
+
+        &:hover {
+            border: 1px solid transparent;
+            background: $color-blue;
+
+            span {
+                color: $color-white;
+            }
+        }
+    }
+
+    a.active {
+        border: 1px solid transparent;
+        background: $color-blue;
+
+        span {
+            color: $color-white;
+        }
+    }
+}
 // var
 
 
@@ -406,6 +453,72 @@ address {
     }
 }
 // action
+
+// authors
+.authors {
+
+    &_cards {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        margin-bottom: 50px;
+    }
+
+    &_card {
+        display: flex;
+        align-items: start;
+        gap: 80px;
+
+        &_title {
+            width: 332px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+
+            h6 {
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 24px;
+                color: $color-black;
+            }
+
+            span {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 22.4px;
+                color: $color-dark-grey;
+            }
+
+            .btn_white {
+                width: 148px;
+                height: 40px;
+                @include flex-full-center();
+                gap: 8px;
+            }
+        }
+
+        &_books {
+            display: flex;
+            gap: 30px;
+            width: 100%;
+
+            .action_book {
+                width: calc(100% / 6 - 25px);
+
+                img {
+                    width: 100%;
+                }
+
+                .comment {
+                    img {
+                        width: 22px;
+                    }
+                }
+            }
+        }
+    }
+}
+// authors
 
 // footer
 .footer {

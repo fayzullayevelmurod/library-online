@@ -168,6 +168,49 @@ address {
   color: #ffffff;
 }
 
+.authors_alphabet {
+  margin: 40px 0 60px 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.authors_alphabet .full {
+  width: 50px;
+}
+.authors_alphabet a {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid #C9CADC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+.authors_alphabet a span {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.2px;
+  color: #000000;
+  transition: 0.3s ease;
+}
+.authors_alphabet a:hover {
+  border: 1px solid transparent;
+  background: #4867F6;
+}
+.authors_alphabet a:hover span {
+  color: #ffffff;
+}
+.authors_alphabet a.active {
+  border: 1px solid transparent;
+  background: #4867F6;
+}
+.authors_alphabet a.active span {
+  color: #ffffff;
+}
+
 .login {
   display: flex;
   align-items: stretch;
@@ -311,6 +354,58 @@ address {
   font-weight: 400;
   line-height: 14.4px;
   color: #6A6773;
+}
+
+.authors_cards {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin-bottom: 50px;
+}
+.authors_card {
+  display: flex;
+  align-items: start;
+  gap: 80px;
+}
+.authors_card_title {
+  width: 332px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.authors_card_title h6 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #000000;
+}
+.authors_card_title span {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.4px;
+  color: #6A6773;
+}
+.authors_card_title .btn_white {
+  width: 148px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.authors_card_books {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+}
+.authors_card_books .action_book {
+  width: calc(16.6666666667% - 25px);
+}
+.authors_card_books .action_book img {
+  width: 100%;
+}
+.authors_card_books .action_book .comment img {
+  width: 22px;
 }
 
 .footer {
