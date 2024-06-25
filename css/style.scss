@@ -154,15 +154,41 @@ address {
 }
 
 .pagination {
+    margin-bottom: 50px;
     @include flex-full-center();
     gap: 5px;
 
     .prev_icon {
         margin-right: 10px;
+
+        &:hover {
+            background: transparent;
+            border: 1px solid $color-dark-grey;
+
+            svg {
+                path {
+                    @include transition();
+                    stroke: $color-blue;
+                }
+            }
+        }
+
     }
 
     .next_icon {
         margin-left: 10px;
+
+        &:hover {
+            background: transparent;
+            border: 1px solid $color-dark-grey;
+            
+            svg {
+                path {
+                    @include transition();
+                    stroke: $color-blue;
+                }
+            }
+        }
     }
 
     a {
@@ -358,6 +384,10 @@ address {
             @include flex-center();
             white-space: nowrap;
             gap: 3px;
+
+            img {
+                transform: translateY(-2px);
+            }
 
             h5 {
                 font-size: 14px;
