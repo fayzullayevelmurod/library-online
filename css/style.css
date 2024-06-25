@@ -312,6 +312,15 @@ address {
   font-weight: 400;
   line-height: 19.6px;
 }
+.login_form form p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.6px;
+  color: #6A6773;
+}
+.login_form form p a {
+  color: #4867F6;
+}
 .login_form .form_btns {
   display: flex;
   flex-direction: column;

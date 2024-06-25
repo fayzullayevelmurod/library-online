@@ -397,6 +397,17 @@ address {
                 font-weight: 400;
                 line-height: 19.6px;
             }
+
+            p {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 19.6px;
+                color: $color-dark-grey;
+
+                a {
+                    color: $color-blue;
+                }
+            }
         }
 
         .form_btns {
