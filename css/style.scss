@@ -727,10 +727,14 @@ address {
 .categories {
     &_lists {
         display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
         margin: 60px 0 50px 0;
     }
 
     &_list {
+        border: 1px solid red;
+        width: calc(100% / 2 - 15px);
         display: flex;
         flex-direction: column;
         gap: 40px;
