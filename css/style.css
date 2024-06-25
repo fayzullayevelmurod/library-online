@@ -564,6 +564,47 @@ address {
   fill: #ffffff;
 }
 
+.categories_lists {
+  display: flex;
+  margin: 60px 0 50px 0;
+}
+.categories_list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.categories_block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.categories_block .list_title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #000000;
+}
+.categories_block ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.categories_block .book_link {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.4px;
+  color: #000000;
+  padding: 7px 10px;
+  border-radius: 30px;
+  border: 1px solid #C9CADC;
+  transition: 0.3s ease;
+}
+.categories_block .book_link:hover {
+  background: #39475A;
+  color: #F4F5FA;
+  border: 1px solid transparent;
+}
+
 .footer {
   background: #000000;
   position: relative;
