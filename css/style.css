@@ -72,6 +72,12 @@ address {
   color: #000000;
   border-radius: 10px;
   border: 1px solid #C9CADC;
+  transition: 0.3s ease;
+}
+.btn_white:hover {
+  border: 1px solid transparent;
+  background: #4867F6;
+  color: #ffffff;
 }
 .btn_blue {
   display: flex;
@@ -85,6 +91,11 @@ address {
   color: #ffffff;
   border-radius: 10px;
   background: #4867F6;
+  transition: 0.3s ease;
+}
+.btn_blue:hover {
+  background: #0423B6;
+  color: #ffffff;
 }
 
 .breadcrumb {
@@ -393,6 +404,12 @@ address {
   justify-content: center;
   gap: 8px;
 }
+.authors_card_title .btn_white svg path {
+  transition: 0.3s ease;
+}
+.authors_card_title .btn_white:hover svg path {
+  fill: #ffffff;
+}
 .authors_card_books {
   display: flex;
   gap: 30px;
@@ -425,6 +442,11 @@ address {
 .action_list_card_img {
   flex-shrink: 0;
 }
+.action_list_card_img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px;
+}
 .action_list_card_text {
   display: flex;
   flex-direction: column;
@@ -442,6 +464,11 @@ address {
   font-weight: 400;
   line-height: 19.6px;
   color: #000000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 .action_list_card_text span {
   font-size: 14px;
@@ -494,6 +521,19 @@ address {
   align-items: center;
   justify-content: center;
   gap: 8px;
+}
+.action_list_btns .btn_white svg path {
+  transition: 0.3s ease;
+}
+.action_list_btns .btn_white span {
+  color: #000000;
+  transition: 0.3s ease;
+}
+.action_list_btns .btn_white:hover span {
+  color: #ffffff;
+}
+.action_list_btns .btn_white:hover svg path {
+  fill: #ffffff;
 }
 
 .footer {
@@ -611,6 +651,11 @@ address {
   .authors_card {
     gap: 60px;
   }
+  .action_list_card_level h6 {
+    width: 70px;
+    font-size: 26px;
+    line-height: 31px;
+  }
 }
 @media only screen and (max-width: 1200px) {
   .main_container {
@@ -626,6 +671,14 @@ address {
   .authors_card_title {
     flex-direction: row;
     width: 100%;
+  }
+  .action_list_card {
+    position: relative;
+  }
+  .action_list_card_level {
+    position: absolute;
+    right: 20px;
+    top: 20px;
   }
   .footer_top {
     text-align: center;
@@ -696,6 +749,49 @@ address {
   .authors_card_books .action_book:nth-child(n+4) {
     display: none;
   }
+  .action_list_cards {
+    margin: 40px 0 50px 0;
+  }
+  .action_list_card {
+    padding: 10px;
+    gap: 20px;
+  }
+  .action_list_card_img {
+    width: 110px;
+  }
+  .action_list_card_level {
+    top: 10px;
+    right: 10px;
+  }
+  .action_list_card_level h6 {
+    width: auto;
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .action_list_card_level h6 img {
+    transform: translateY(-3px);
+    width: 24px;
+  }
+  .action_list_card_level span {
+    font-size: 10px;
+    line-height: 12px;
+  }
+  .action_list_btns {
+    gap: 10px;
+  }
+  .action_list_btns .btn_white {
+    width: 50px;
+  }
+  .action_list_btns .btn_white span {
+    display: none;
+  }
+  .action_list_card_text p {
+    display: none;
+  }
+  .action_list_card_text h6 {
+    font-size: 16px;
+    line-height: 19px;
+  }
   .footer .footer_white_block {
     border-radius: 0 0 60px 60px;
   }
@@ -724,5 +820,29 @@ address {
   }
   .authors_card_books .action_book:nth-child(n+3) {
     display: none;
+  }
+  .action_list_card_img {
+    width: 95px;
+  }
+  .action_list_card {
+    gap: 15px;
+  }
+  .action_list_card_text {
+    gap: 15px;
+  }
+  .action_list_card_text h6 {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .action_list_btns .btn_blue {
+    width: 130px;
+  }
+  .action_list_card_level h6 {
+    font-size: 18px;
+  }
+  .action_list_card_level h6 img {
+    width: 23px;
+    height: 23px;
+    transform: translateY(-2px);
   }
 }/*# sourceMappingURL=style.css.map */

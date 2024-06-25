@@ -8,6 +8,7 @@ $font-Inter: 'Inter', sans-serif;
 $color-grey: #7B8781;
 $color-black: #000000;
 $color-blue: #4867F6;
+$color-blue-dark: #0423B6;
 $color-white: #ffffff;
 $color-grey100: #C9CADC;
 $color-dark-grey: #6A6773;
@@ -124,6 +125,13 @@ address {
         color: $color-black;
         border-radius: 10px;
         border: 1px solid $color-grey100;
+        @include transition();
+
+        &:hover {
+            border: 1px solid transparent;
+            background: $color-blue;
+            color: $color-white;
+        }
     }
 
     &_blue {
@@ -136,6 +144,13 @@ address {
         color: $color-white;
         border-radius: 10px;
         background: $color-blue;
+
+        @include transition();
+
+        &:hover {
+            background: $color-blue-dark;
+            color: $color-white;
+        }
     }
 }
 
@@ -494,6 +509,20 @@ address {
                 height: 40px;
                 @include flex-full-center();
                 gap: 8px;
+
+                svg {
+                    path {
+                        @include transition();
+                    }
+                }
+
+                &:hover {
+                    svg {
+                        path {
+                            fill: $color-white;
+                        }
+                    }
+                }
             }
         }
 
@@ -539,6 +568,11 @@ address {
 
         &_img {
             flex-shrink: 0;
+
+            img {
+                object-fit: cover;
+                border-radius: 15px;
+            }
         }
 
         &_text {
@@ -559,6 +593,11 @@ address {
                 font-weight: 400;
                 line-height: 19.6px;
                 color: $color-black;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
             }
     
             span {
@@ -616,6 +655,32 @@ address {
             width: 150px;
             @include flex-full-center();
             gap: 8px;
+        }
+
+        .btn_white {
+            svg {
+                path {
+                    @include transition();
+                }
+            }
+
+            span {
+                color: $color-black;
+                @include transition();
+            }
+
+            &:hover {
+
+                span {
+                    color: $color-white;
+                }
+
+                svg {
+                    path {
+                        fill: $color-white;
+                    }
+                }
+            }
         }
     }
 }
