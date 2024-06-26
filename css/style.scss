@@ -412,6 +412,10 @@ address {
                     line-height: 19.2px;
                     color: $color-black;
                 }
+
+                &:hover {
+                    border: 1px solid $color-dark-grey;
+                }
             }
 
             .forget_password {

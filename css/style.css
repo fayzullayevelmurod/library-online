@@ -327,6 +327,9 @@ address {
   line-height: 19.2px;
   color: #000000;
 }
+.login_form form input:hover {
+  border: 1px solid #6A6773;
+}
 .login_form form .forget_password {
   color: #4867F6;
   font-size: 14px;
