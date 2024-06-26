@@ -83,3 +83,105 @@ if (searchBtn) {
             }, 300);
     }
 }
+
+let bookSwps = document.querySelectorAll('.book-swp');
+
+if (bookSwps.length) {
+    bookSwps.forEach(el => {
+        let swp = new Swiper(el.querySelector('.swiper'), {
+            slidesPerView: 2,
+            spaceBetween: 20,
+            loop: true,
+            breakpoints: {
+                1700: {
+                    slidesPerView: 6,
+                    spaceBetween: 30,
+                },
+                1500: {
+                    slidesPerView: 5,
+                    spaceBetween: 30,
+                },
+                700: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                },
+                450: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                }
+            },
+            navigation: {
+                nextEl: el.querySelector('.book-swp__btn_next'),
+                prevEl: el.querySelector('.book-swp__btn_prev'),
+            }
+        })
+    })
+}
+
+let popularSwp = new Swiper('.popular-genres .swiper', {
+    slidesPerView: 2,
+    spaceBetween: 15,
+    // loop: true,
+    grid: {
+        rows: 2,
+        fill: "row",
+    },
+    breakpoints: {
+        1700: {
+            slidesPerView: 7,
+            spaceBetween: 20,
+            grid: {
+                rows: 1,
+                fill: "row",
+            },
+        },
+        1500: {
+            slidesPerView: 6,
+            spaceBetween: 20,
+            grid: {
+                rows: 1,
+                fill: "row",
+            },
+        },
+        700: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+            grid: {
+                rows: 1,
+                fill: "row"
+            }
+        },
+        450: {
+            slidesPerView: 3,
+            spaceBetween: 15,
+            grid: {
+                rows: 2,
+                fill: "row"
+            }
+        }
+    },
+    navigation: {
+        nextEl: ".popular-genres__btn_next",
+        prevEl: ".popular-genres__btn_prev"
+    }
+})
+
+let indexMain = document.querySelector('.main.index-main');
+
+function menuHide() {
+    if (window.innerWidth <= 1200) {
+        indexMain.classList.remove('active');
+        mainNav.classList.remove('active');
+        mainContent.classList.remove('active');
+    }
+}
+
+if (indexMain) {
+    menuHide();
+}
+
+window.addEventListener('resize', function () {
+    if (indexMain) {
+        menuHide();
+    }
+})

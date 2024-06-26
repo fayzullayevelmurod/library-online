@@ -28,6 +28,8 @@
             }
 
             .main_content {
+                width: calc(100% - 375px);
+
                 .book-description {
                     flex-direction: column;
 
@@ -89,6 +91,8 @@
             }
 
             .main_content {
+                width: calc(100% - 346px);
+
                 .book-cover {
                     padding: 55px;
 
@@ -174,6 +178,18 @@
     .similar-book__card {
         a {
             height: 206px;
+        }
+    }
+
+    .popular-genres__card {
+        height: 98px;
+    }
+
+    .read-book {
+        &__content {
+            .main_title {
+                max-width: 278px;
+            }
         }
     }
 }
@@ -369,6 +385,10 @@
     .main {
         &_container {
             padding: 0 40px;
+        }
+
+        .main_content {
+            width: 100% !important;
         }
     }
 
@@ -645,6 +665,25 @@
     .review_form.review_gray {
         margin-left: 0;
     }
+
+    .read-book {
+        position: relative;
+        padding-left: 225px;
+
+        &__card {
+            height: 100%;
+            width: 185px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        &__content {
+            ul li:nth-child(n+4) {
+                display: none;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 870px) {
@@ -754,6 +793,61 @@
     .similar-book__card {
         a {
             height: 195px;
+        }
+    }
+
+    .book-swp {
+        position: relative;
+        padding-bottom: 70px;
+
+        &__head {
+            &_right {
+                a {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                }
+            }
+        }
+
+        .similar-book__card {
+            h4, p {
+                font-size: 12px;
+            }
+
+            &_review {
+                h5 {
+                    font-size: 12px;
+                }
+                span {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+
+    .popular-genres {
+        padding-bottom: 70px;
+        position: relative;
+
+        &__head {
+            &_right {
+                a {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .read-book {
+        padding-left: 0;
+
+        &__card {
+            display: none;
         }
     }
 }
@@ -1035,6 +1129,14 @@
         .btn_white {
             top: 10px;
             right: 10px;
+        }
+    }
+
+    .book-swp {
+        .similar-book__card {
+            a {
+                height: 235px;
+            }
         }
     }
 
