@@ -8,6 +8,7 @@ $font-Inter: 'Inter', sans-serif;
 $color-grey: #7B8781;
 $color-black: #000000;
 $color-blue: #4867F6;
+$color-blue-dark: #0423B6;
 $color-white: #ffffff;
 $color-grey100: #C9CADC;
 $color-dark-grey: #6A6773;
@@ -129,6 +130,13 @@ address {
         color: $color-black;
         border-radius: 10px;
         border: 1px solid $color-grey100;
+        @include transition();
+
+        &:hover {
+            border: 1px solid transparent;
+            background: $color-blue;
+            color: $color-white;
+        }
     }
 
     &_blue {
@@ -141,6 +149,13 @@ address {
         color: $color-white;
         border-radius: 10px;
         background: $color-blue;
+
+        @include transition();
+
+        &:hover {
+            background: $color-blue-dark;
+            color: $color-white;
+        }
     }
 }
 
@@ -177,18 +192,45 @@ address {
 }
 
 .pagination {
+    margin-bottom: 50px;
     @include flex-full-center();
     gap: 5px;
 
     .prev_icon {
         margin-right: 10px;
+
+        &:hover {
+            background: transparent;
+            border: 1px solid $color-dark-grey;
+
+            svg {
+                path {
+                    @include transition();
+                    stroke: $color-blue;
+                }
+            }
+        }
+
     }
 
     .next_icon {
         margin-left: 10px;
+
+        &:hover {
+            background: transparent;
+            border: 1px solid $color-dark-grey;
+            
+            svg {
+                path {
+                    @include transition();
+                    stroke: $color-blue;
+                }
+            }
+        }
     }
 
     a {
+        flex-shrink: 0;
         width: 40px;
         height: 40px;
         border-radius: 10px;
@@ -235,6 +277,57 @@ address {
         }
     }
 }
+
+.authors_alphabet {
+    margin: 40px 0 60px 0;
+    @include flex-center();
+    gap: 5px;
+    flex-wrap: wrap;
+
+    .full {
+        width: 50px;
+        span {
+            text-transform: capitalize;
+        }
+    }
+
+    a {
+        flex-shrink: 0;
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        border: 1px solid $color-grey100;
+        @include flex-full-center();
+        @include transition();
+
+        span {
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 19.2px;
+            color: $color-black;
+            @include transition();
+        }
+
+        &:hover {
+            border: 1px solid transparent;
+            background: $color-blue;
+
+            span {
+                color: $color-white;
+            }
+        }
+    }
+
+    a.active {
+        border: 1px solid transparent;
+        background: $color-blue;
+
+        span {
+            color: $color-white;
+        }
+    }
+}
 // var
 
 
@@ -245,6 +338,7 @@ address {
     height: 100vh;
 
     &_img {
+        max-width: 950px;
         position: relative;
 
         .login_logo {
@@ -259,6 +353,14 @@ address {
             object-fit: cover;
             height: 100%;
             width: 100%;
+        }
+
+        .login_table_bg {
+            display: none;
+        }
+
+        .login_mobile_bg {
+            display: none;
         }
     }
 
@@ -278,6 +380,7 @@ address {
         }
 
         form {
+            width: 385px;
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -310,6 +413,24 @@ address {
                     color: $color-black;
                 }
             }
+
+            .forget_password {
+                color: $color-blue;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 19.6px;
+            }
+
+            p {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 19.6px;
+                color: $color-dark-grey;
+
+                a {
+                    color: $color-blue;
+                }
+            }
         }
 
         .form_btns {
@@ -317,6 +438,10 @@ address {
             flex-direction: column;
             gap: 15px;
             margin-top: 10px;
+
+            a {
+                width: 100%;
+            }
         }
 
         .back_btn {
@@ -333,9 +458,9 @@ address {
         }
     }
 
-    &_block {
-        flex: 1;
-    }
+    // &_block {
+    //     flex: 1;
+    // }
 }
 // login
 
@@ -1073,6 +1198,10 @@ address {
             white-space: nowrap;
             gap: 3px;
 
+            img {
+                transform: translateY(-2px);
+            }
+
             h5 {
                 font-size: 14px;
                 font-weight: 500;
@@ -1090,6 +1219,277 @@ address {
     }
 }
 // action
+
+// authors
+.authors {
+
+    &_cards {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        margin-bottom: 50px;
+    }
+
+    &_card {
+        display: flex;
+        align-items: start;
+        gap: 80px;
+
+        &_title {
+            width: 332px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+
+            h6 {
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 24px;
+                color: $color-black;
+            }
+
+            span {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 22.4px;
+                color: $color-dark-grey;
+            }
+
+            .btn_white {
+                width: 148px;
+                height: 40px;
+                @include flex-full-center();
+                gap: 8px;
+
+                svg {
+                    path {
+                        @include transition();
+                    }
+                }
+
+                &:hover {
+                    svg {
+                        path {
+                            fill: $color-white;
+                        }
+                    }
+                }
+            }
+        }
+
+        &_books {
+            display: flex;
+            gap: 30px;
+            width: 100%;
+
+            .action_book {
+                width: calc(100% / 6 - 25px);
+
+                img {
+                    width: 100%;
+                }
+
+                .comment {
+                    img {
+                        width: 22px;
+                    }
+                }
+            }
+        }
+    }
+}
+// authors
+
+// action_list
+.action_list {
+    &_cards {
+        margin: 60px 0 50px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &_card {
+        border: 1px solid $color-grey100;
+        padding: 20px;
+        border-radius: 20px;
+        display: flex;
+        align-items: start;
+        gap: 30px;
+
+        &_img {
+            flex-shrink: 0;
+
+            img {
+                object-fit: cover;
+                border-radius: 15px;
+            }
+        }
+
+        &_text {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            h6 {
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 24px;
+                color: $color-black;
+                margin-bottom: 5px;
+            }
+    
+            p {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 19.6px;
+                color: $color-black;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+            }
+    
+            span {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 16.8px;
+                color: $color-dark-grey;
+            }
+    
+            .more_link {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 16.8px;
+                color: $color-dark-grey;
+            }
+        }
+
+        &_level {
+            flex-shrink: 0;
+            white-space: nowrap;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            text-align: right;
+
+            img {
+                width: 29px;
+                height: 29px;
+            }
+
+            h6 {
+                width: 79px;
+                @include flex-center();
+                gap: 3px;
+                font-size: 30px;
+                font-weight: 500;
+                line-height: 36px;
+                color: $color-black;
+            }
+
+            span {
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 14.4px;
+                color: $color-dark-grey;
+            }
+        }
+    }
+
+    &_btns {
+        @include flex-center();
+        gap: 20px;
+
+        a {
+            width: 150px;
+            @include flex-full-center();
+            gap: 8px;
+        }
+
+        .btn_white {
+            svg {
+                path {
+                    @include transition();
+                }
+            }
+
+            span {
+                color: $color-black;
+                @include transition();
+            }
+
+            &:hover {
+
+                span {
+                    color: $color-white;
+                }
+
+                svg {
+                    path {
+                        fill: $color-white;
+                    }
+                }
+            }
+        }
+    }
+}
+// action_list
+
+// categories
+.categories {
+    &_lists {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin: 60px 0 50px 0;
+    }
+
+    &_list {
+        width: calc(100% / 2 - 15px);
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &_block {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .list_title {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 24px;
+            color: $color-black;
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px 10px;
+        }
+
+        .book_link {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 22.4px;
+            color: $color-black;
+            padding: 7px 10px;
+            border-radius: 30px;
+            border: 1px solid $color-grey100;
+            @include transition();
+
+            &:hover {
+                background: #39475A;
+                color: #F4F5FA;
+                border: 1px solid transparent;
+            }
+        }
+    }
+}
+// categories
 
 // footer
 .footer {
