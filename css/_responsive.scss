@@ -161,6 +161,17 @@
         }
     }
 
+    .categories {
+        &_lists {
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        &_list {
+            width: 100%;
+        }
+    }
+
     .footer {
         &_top {
             text-align: center;
@@ -485,6 +496,24 @@
                     height: 23px;
                     transform: translateY(-2px);
                 }
+            }
+        }
+    }
+
+    .categories {
+        &_lists {
+            margin: 40px 0 50px 0;
+            gap: 30px;
+        }
+
+        &_list {
+            gap: 30px;
+        }
+
+        &_block {
+            .book_link {
+                font-size: 14px;
+                line-height: 19px;
             }
         }
     }

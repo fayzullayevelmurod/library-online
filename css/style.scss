@@ -733,7 +733,6 @@ address {
     }
 
     &_list {
-        border: 1px solid red;
         width: calc(100% / 2 - 15px);
         display: flex;
         flex-direction: column;
