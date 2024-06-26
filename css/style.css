@@ -597,6 +597,12 @@ address {
 .main.active .main_container {
   gap: 80px;
 }
+.main.active .authors_card_books .action_book {
+  width: calc(25% - 20px);
+}
+.main.active .authors_card_books .action_book:nth-child(n+5) {
+  display: none;
+}
 
 .book-cover {
   padding: 55px 0 51px 388px;
@@ -1673,6 +1679,15 @@ address {
   }
 }
 @media only screen and (max-width: 1620px) {
+  .main.active .authors_card_books .action_book {
+    width: calc(33.3333333333% - 20px);
+  }
+  .main.active .authors_card_books .action_book:nth-child(n+4) {
+    display: none;
+  }
+  .main.active .action_book {
+    width: calc(20% - 24px);
+  }
   .action_book {
     width: calc(14.2857142857% - 26px);
   }
@@ -1698,6 +1713,16 @@ address {
     width: 407px;
   }
 }
+@media only screen and (max-width: 1350px) {
+  .main.active .action_list_card {
+    position: relative;
+  }
+  .main.active .action_list_card_level {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+}
 @media only screen and (max-width: 1300px) {
   .main_container {
     padding: 0 140px;
@@ -1705,6 +1730,12 @@ address {
   .main_title {
     font-size: 26px;
     line-height: 26px;
+  }
+  .main.active .authors_card_books .action_book {
+    width: calc(25% - 20px);
+  }
+  .main.active .authors_card_books .action_book:nth-child(n+4) {
+    display: none;
   }
   .login_img {
     max-width: 727px;
@@ -1726,9 +1757,6 @@ address {
   }
   .authors_card_books .action_book:nth-child(n+5) {
     display: none;
-  }
-  .authors_card {
-    gap: 60px;
   }
   .action_list_card_level h6 {
     width: 70px;
@@ -2079,6 +2107,9 @@ address {
 @media only screen and (max-width: 650px) {
   .main_container {
     padding: 0 20px;
+  }
+  .main_content {
+    width: 100%;
   }
   .pagination a:nth-child(5) {
     display: none;

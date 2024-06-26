@@ -177,7 +177,30 @@
         }
     }
 }
+
 @media only screen and (max-width: 1620px) {
+    .main {
+        &.active {
+            .authors {
+                &_card {
+                    &_books {
+                        .action_book {
+                            width: calc(100% / 3 - 20px);
+                            &:nth-child(n+4) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .action {
+                &_book {
+                    width: calc(100% / 5 - 24px);
+                }
+            }
+        }
+    }
     .action {
         &_book {
             width: calc(100% / 7 - 26px);
@@ -218,6 +241,25 @@
     }
 }
 
+@media only screen and (max-width: 1350px) {
+    .main {
+        &.active {
+            .action_list {
+        
+                &_card {
+                    position: relative;
+                }
+        
+                &_card_level {
+                    position: absolute;
+                    right: 20px;
+                    top: 20px;
+                }
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 1300px) {
     .main {
         &_container {
@@ -227,6 +269,21 @@
         &_title {
             font-size: 26px;
             line-height: 26px;
+        }
+
+        &.active {
+            .authors {
+                &_card {
+                    &_books {
+                        .action_book {
+                            width: calc(100% / 4 - 20px);
+                            &:nth-child(n+4) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -260,12 +317,6 @@
                     }
                 }
             }
-        }
-    }
-
-    .authors {
-        &_card {
-            gap: 60px;
         }
     }
 
@@ -750,6 +801,10 @@
     .main {
         &_container {
             padding: 0 20px;
+        }
+
+        &_content {
+            width: 100%;
         }
     }
 

@@ -744,6 +744,19 @@ address {
         .main_container {
             gap: 80px;
         }
+
+        .authors {
+            &_card {
+                &_books {
+                    .action_book {
+                        width: calc(100% / 4 - 20px);
+                        &:nth-child(n+5) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 // Main end
