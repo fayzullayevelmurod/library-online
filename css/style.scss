@@ -75,6 +75,11 @@ html {
 body {
     font-family: $font-Onest;
     font-style: normal;
+    font-weight: 400;
+
+    &.bg-gray {
+        background: #F4F5FA;
+    }
 }
 
 input {
@@ -136,6 +141,24 @@ address {
         color: $color-white;
         border-radius: 10px;
         background: $color-blue;
+    }
+}
+
+.form_inp {
+    background: #fff;
+    border: 1px solid #C9CADC;
+    width: 100%;
+    border-radius: 10px;
+    outline: none;
+    padding: 15px 15px 16px;
+    font-size: 16px;
+    line-height: 120%;
+    color: black;
+    transition: .3s ease all;
+    resize: none;
+    
+    &:hover, &:focus {
+        border-color: #6A6773;
     }
 }
 
@@ -316,6 +339,697 @@ address {
 }
 // login
 
+// header
+.header {
+    padding: 30px 0;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    &__left {
+        display: flex;
+        align-items: center;
+    }
+
+    &__right {
+        flex-shrink: 0;
+    }
+
+    .search_btn {
+        display: none;
+    }
+
+    &__bars {
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #F4F5FA;
+
+        svg:last-child {
+            display: none;
+        }
+    }
+
+    &__search {
+        position: relative;
+
+        input {
+            border: 1px solid #C9CADC;
+            padding: 0 66px 0 20px;
+            border-radius: 10px;
+            font-size: 14px;
+            line-height: 100%;
+            height: 50px;
+            width: 705px;
+        }
+        
+        button {
+            position: absolute;
+            top: 50%;
+            right: 4px;
+            transform: translateY(-50%);
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #4867F6;
+            border-radius: 8px;
+            transition: .3s ease all;
+            
+            &:hover {
+                background: #0423B6;
+            }
+        }
+    }
+
+    &__logo {
+        margin: 0 140px 0 30px;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 100%;
+        color: black;
+    }
+
+    .btn_white {
+        padding: 0 30px;
+        width: auto;
+        gap: 8px;
+        transition: .3s ease all;
+        flex-shrink: 0;
+
+        svg path, span {
+            transition: .3s ease all;
+        }
+
+        &:hover {
+            background: #4867F6;
+            border-color: #4867F6;
+
+            svg path {
+                fill: #FFF;
+            }
+
+            span {
+                color: #fff;
+            }
+        }
+    }
+}
+// header end
+
+// Search mobile
+.search_mb {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    display: none;
+
+    &__bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .5);
+    }
+
+    &__content {
+        position: relative;
+        width: 100%;
+        background: #fff;
+        padding: 20px;
+    }
+
+    &__inp {
+        position: relative;
+
+        input {
+            font-size: 14px;
+            height: 50px;
+            width: 100%;
+            padding: 0 66px 0 20px;
+            border-radius: 10px;
+            border: 1px solid #C9CADC;
+
+            &:hover, &:focus {
+                border-color: #6A6773;
+            }
+        }
+
+        button {
+            background: #4867F6;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            transition: .3s ease all;
+            position: absolute;
+            top: 50%;
+            right: 4px;
+            transform: translateY(-50%);
+
+            &:hover {
+                background: #0423B6;
+            }
+        }
+    }
+}
+// Search mobile end
+
+// Main
+.main {
+
+    .main_container {
+        display: flex;
+        align-items: flex-start;
+        gap: 0px;
+        transition: .3s ease all;
+    }
+
+    &_nav {
+        flex-shrink: 0;
+        overflow: hidden;
+        width: 0;
+        transition: .3s ease all;
+
+        &.active {
+            width: 332px;
+        }
+
+        &__close {
+            display: none;
+        }
+
+        &__content {
+            background: #F4F5FA;
+            border-radius: 20px;
+            padding: 20px 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 332px;
+
+            a {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 8px 16px;
+                font-size: 16px;
+                line-height: 120%;
+                font-weight: 500%;
+
+                svg {
+                    width: 20px;
+                }
+            }
+
+            .accordion {
+                border-radius: 10px;
+                background: #FFFFFF;
+                
+                &_btn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    text-align: left;
+                    padding: 8px 16px;
+                    font-size: 16px;
+                    line-height: 120%;
+                    font-weight: 500%;
+
+                    span {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+                }
+
+                &_body {
+                    max-height: 494px;
+                    overflow-y: scroll;
+
+                    &::-webkit-scrollbar {
+                        width: 4px;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        border-radius: 10px;
+                        background: #C9CADC;
+                    }
+
+                    a {
+                        font-size: 14px;
+                        line-height: 120%;
+                        font-weight: 500;
+                        padding: 8px 16px;
+                        display: block;
+                        transition: .3s ease all;
+                        color: #000;
+
+                        &:hover {
+                            font-weight: bold;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.active {
+
+        .main_container {
+            gap: 80px;
+        }
+    }
+}
+// Main end
+
+// Book cover
+.book-cover {
+    padding: 55px 0 51px 388px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 40px;
+    margin-top: 10px;
+
+    &__bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, #4A5768, #6F8093);
+        z-index: -1;
+        border-radius: 30px;
+    }
+
+    .main_title {
+        color: #fff;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        line-height: 140%;
+        color: #C9CADC;
+        margin-bottom: 10px;
+    }
+
+    .links {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        a {
+            padding: 7px 10px;
+            color: #F4F5FA;
+            font-size: 14px;
+            line-height: 140%;
+            font-weight: 500;
+            background: #39475A;
+            border-radius: 30px;
+        }
+    }
+
+    .btn_white {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        width: auto;
+        padding: 0px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        gap: 8px;
+        transition: .3s ease all;
+
+        svg path {
+            transition: .3s ease all;
+        }
+
+        &:hover {
+            border-color: #4867F6;
+            background: #4867F6;
+
+            svg path {
+                fill: #FFF;
+            }
+        }
+    }
+
+    &__example {
+        position: absolute;
+        left: 40px;
+        top: 40px;
+        width: 288px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            width: 100%;
+            transition: .3s ease all;
+
+            &:hover {
+                background: #0423B6;
+            }
+        }
+    }
+}
+// Book cover end
+
+// Book description
+.book-description {
+    padding-left: 388px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 60px;
+    margin-bottom: 60px;
+
+    &__left {
+        width: 100%;
+
+        h2 {
+            font-size: 20px;
+            line-height: 120%;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .descriptions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            p {
+                font-size: 14px;
+                line-height: 140%;
+                color: #6A6773;
+            }
+        }
+    }
+
+    &__right {
+        width: 345px;
+        flex-shrink: 0;
+
+        &_head {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+
+            h3 {
+                font-size: 30px;
+                line-height: 140%;
+                font-weight: 500;
+                display: flex;
+                align-items: flex-end;
+                gap: 5px;
+
+                span {
+                    font-size: 12px;
+                    line-height: 120%;
+                    color: #6A6773;
+                    margin-bottom: 8px;
+                }
+            }
+        }
+
+        .degree {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            li {
+                display: flex;
+                align-items: center;
+                gap: 13px;
+
+                span {
+                    color: #6A6773;
+                    font-size: 14px;
+                    line-height: 140%;
+                    width: 10px;
+                    flex-shrink: 0;
+                }
+            }
+
+            .line {
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                background: #F5A623;
+                border-radius: 10px;
+
+
+                &_wrap {
+                    width: 100%;
+                    position: relative;
+                    height: 9px;
+                    background: #F4F5FA;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+}
+// Book description end
+
+// Reviews
+.reviews {
+    margin-left: 388px;
+    margin-bottom: 60px;
+    background: #F4F5FA;
+    border-radius: 20px;
+    padding: 30px;
+
+    .main_title {
+        margin-bottom: 20px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &_item {
+            background: #fff;
+            border-radius: 15px;
+            padding: 25px 20px;
+        }
+
+        .degree {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            font-size: 24px;
+            line-height: 120%;
+            font-weight: 500;
+        }
+
+        .item {
+            &_head {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                margin-bottom: 15px;
+            }
+
+            &_user {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .letter {
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    background: #4867F6;
+                    font-size: 20px;
+                    line-height: 110%;
+                    font-weight: bold;
+                    color: #fff;
+                    flex-shrink: 0;
+                }
+
+                h4 {
+                    font-size: 14px;
+                    line-height: 110%;
+                    margin-bottom: 5px;
+                }
+
+                p {
+                    font-size: 12px;
+                    line-height: 110%;
+                    color: #6A6773;
+                }
+            }
+
+            &_content {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                p {
+                    font-size: 14px;
+                    line-height: 140%;
+                }
+            }
+        }
+    }
+}
+// Reviews end
+
+// Similar book
+.similar-book {
+    margin: 120px 0 50px;
+
+    &__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+
+        &_right {
+            display: flex;
+            align-items: center;
+
+            .btn_white {
+                width: auto;
+                padding: 13px 20px;
+                height: auto;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                transition: .3s ease all;
+
+                svg path {
+                    transition: .3s ease all;
+                }
+
+                &:hover {
+                    background: #4867F6;
+                    border-color: #4867F6;
+                    color: #fff;
+
+                    svg path {
+                        fill: #fff;
+                    }
+                }
+            }
+
+            button {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+                border: 1px solid #C9CADC;
+                transition: .3s ease all;
+
+                svg path {
+                    transition: .3s ease all;
+                }
+
+                &.btn_prev {
+                    margin: 0 20px 0 40px;
+                }
+
+                &:hover {
+                    border-color: #6A6773;
+
+                    svg path {
+                        stroke: #4867F6;
+                    }
+                }
+            }
+        }
+    }
+
+    &__card {
+        width: 100%;
+
+        a {
+            width: 100%;
+            height: 253px;
+            display: block;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 10px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        }
+
+        h4 {
+            font-size: 14px;
+            line-height: 120%;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        p {
+            color: #6A6773;
+            font-size: 14px;
+            line-height: 120%;
+            margin-bottom: 10px;
+        }
+
+        &_review {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+
+            h5 {
+                font-size: 14px;
+                line-height: 120%;
+                font-weight: 500;
+            }
+
+            span {
+                font-size: 12px;
+                line-height: 120%;
+                color: #6A6773;
+            }
+        }
+    }
+}
+// Similar book end
+
 // action
 .action {
     &_books {
@@ -470,5 +1184,329 @@ address {
     }
 }
 // footer
+
+// Book page
+.book-page {
+    padding: 20px 0 70px;
+
+    &__container {
+        max-width: 790px;
+        margin: 0 auto;
+    }
+
+    &__head {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+        margin-bottom: 25px;
+
+        a {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: $font-Manrope;
+            font-size: 14px;
+            line-height: 120%;
+            font-weight: 600;
+            color: #7B8781;
+        }
+
+        p {
+            font-size: 12px;
+            line-height: 110%;
+            color: #7B8781;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            font-size: 16px;
+            line-height: 110%;
+            font-weight: 500;
+            color: #1D211F;
+        }
+    }
+
+    &__content {
+        background: white;
+        border-radius: 20px;
+        padding: 10px 20px 20px;
+        margin-bottom: 20px;
+
+        &_head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #DBDBDB;
+
+            .theme {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                p {
+                    font-size: 14px;
+                    line-height: 110%;
+                    font-weight: 500;
+                    color: #1D211F;
+                    padding-right: 11px;
+                    flex-shrink: 0;
+                }
+
+                button {
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    border: 1px solid #DBDBDB;
+                    flex-shrink: 0;
+
+                    &.grey {
+                        background: #DDD7CA;
+                    }
+
+                    &.light {
+                        background: #F6F6F6;
+                    }
+
+                    &.dark {
+                        background: #1D211F;
+                    }
+
+                    &.active {
+                        border-color: #A3D95D;
+                    }
+                }
+            }
+
+            .zoom {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                button {
+                    width: 42px;
+                    height: 42px;
+                    flex-shrink: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .pin {
+                    margin-left: 20px;
+                }
+            }
+        }
+
+        &_text {
+            display: flex;
+            flex-direction: column;
+            padding-top: 10px;
+            gap: 10px;
+
+            p {
+                font-size: 16px;
+                line-height: 140%;
+                color: #1D211F;
+            }
+        }
+
+        &_pagination {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 100px;
+
+            .pagination {
+                &_left {
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    p {
+                        font-size: 14px;
+                        line-height: 110%;
+                        color: #7B8781;
+                    }
+
+                    &__btn {
+                        border: 1px solid #DBDBDB;
+                        background: #fff;
+                        padding: 4px 4px 4px 10px;
+                        display: flex;
+                        align-items: center;
+                        gap: 16px;
+                        border-radius: 10px;
+
+                        span {
+                            color: #6A6773;
+                            font-size: 16px;
+                            line-height: 120%;
+                        }
+                        
+                        button {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+                }
+
+                &_right {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 20px;
+
+                    button {
+                        width: 40px;
+                        height: 40px;
+                        flex-shrink: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid #DBDBDB;
+                        border-radius: 10px;
+                        transition: .3s ease all;
+
+                        svg path {
+                            transition: .3s ease all;
+                        }
+
+                        &:hover {
+                            border-color: #6A6773;
+
+                            svg path {
+                                stroke: #4867F6;
+                            }
+                        }
+                    }
+
+                    p {
+                        font-size: 14px;
+                        line-height: 110%;
+                        font-weight: 500;
+                        color: #1D211F;
+
+                        &.sm {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// Book page end
+
+// Review form
+.review_form {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &.review_gray {
+        background: #F4F5FA;
+        margin-left: 388px;
+    }
+
+    &__subtitle {
+        font-size: 16px;
+        line-height: 100%;
+        font-weight: 500;
+        color: #6A6773;
+
+        span {
+            color: #F43E2D;
+        }
+    }
+
+    .line {
+        height: 1px;
+        width: 100%;
+        background: #EBEBEB;
+    }
+
+    .star {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        p {
+            font-size: 20px;
+            line-height: 120%;
+            font-weight: 500;
+            color: black;
+        }
+
+        &_group {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            button {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+
+    .form_control {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        label {
+            font-size: 14px;
+            line-height: 140%;
+            color: #6A6773;
+
+            span {
+                color: #F43E2D;
+            }
+        }
+
+        textarea {
+            height: 144px;
+        }
+    }
+
+    &__submit {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        button {
+            font-size: 14px;
+            line-height: 100%;
+            font-weight: 500;
+            padding: 18px 30px;
+            width: auto;
+            height: auto;
+            transition: .3s ease all;
+
+            &:hover {
+                background: #0423B6;
+            }
+        }
+    }
+}
+// Review form end
 
 @import './responsive';
