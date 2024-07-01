@@ -394,6 +394,35 @@ address {
                 font-weight: 400;
                 line-height: 19.6px;
                 color: $color-dark-grey;
+                position: relative;
+
+                button {
+                    position: absolute;
+                    right: 20px;
+                    bottom: 12px;
+
+                    svg {
+                        width: 20px;
+
+                        &:nth-child(1) {
+                            display: none;
+                        }
+                    }
+                }
+
+                &.show {
+                    button {
+                        bottom: 15px;
+
+                        svg {
+                            display: none;
+
+                            &:nth-child(1) {
+                                display: block;
+                            }
+                        }
+                    }
+                }
             }
 
             input {
@@ -415,6 +444,10 @@ address {
 
                 &:hover {
                     border: 1px solid $color-dark-grey;
+                }
+
+                &.error {
+                    border-color: #EB3232;
                 }
             }
 
@@ -503,6 +536,16 @@ address {
 
         svg:last-child {
             display: none;
+        }
+
+        &.active {
+            svg {
+                display: none;
+
+                &:last-child {
+                    display: block;
+                }
+            }
         }
     }
 
@@ -736,6 +779,28 @@ address {
                         &:hover {
                             font-weight: bold;
                             text-decoration: underline;
+                        }
+                    }
+                }
+
+                &.hide {
+                    background: transparent;
+
+                    .accordion {
+                        &_btn {
+                            svg {
+                                transform: rotateZ(180deg);
+                            }
+
+                            span {
+                                svg {
+                                    transform: rotate(0);
+                                }
+                            }
+                        }
+
+                        &_body {
+                            display: none;
                         }
                     }
                 }
@@ -995,6 +1060,19 @@ address {
         margin-bottom: 10px;
     }
 
+    .author_list {
+        margin-bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        
+        a {
+            font-size: 14px;
+            line-height: 140%;
+            color: #C9CADC;
+        }
+    }
+
     .links {
         display: flex;
         align-items: center;
@@ -1101,7 +1179,7 @@ address {
 
         &_head {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             margin-bottom: 25px;
 
             h3 {
@@ -1854,6 +1932,26 @@ address {
         padding: 10px 20px 20px;
         margin-bottom: 20px;
 
+        &.grey-theme {
+            background: #DDD7CA;
+        }
+
+        &.light-theme {
+            background: #F6F6F6;
+        }
+
+        &.dark-theme {
+            background: #1D211F;
+
+            .book-page__content_head .theme p {
+                color: #fff;
+            }
+
+            .book-page__content_text p {
+                color: #fff;
+            }
+        }
+
         &_head {
             display: flex;
             align-items: center;
@@ -2079,6 +2177,12 @@ address {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+
+                &.active {
+                    svg path {
+                        fill: #F5A623;
+                    }
+                }
             }
         }
     }

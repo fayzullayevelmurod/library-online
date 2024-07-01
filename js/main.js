@@ -33,6 +33,7 @@ if (bars) {
 
         main.classList.toggle('active');
         mainContent.classList.toggle('active');
+        bars.classList.toggle('active');
 
         if (mainNav.classList.contains('active')) {
             mainNav.classList.remove('active');
@@ -43,6 +44,9 @@ if (bars) {
         } else {
             mainNav.classList.add('active');
         }
+        if (window.innerWidth <= 1200) {
+            document.querySelector('body').style.overflow = 'hidden';
+        }
     }
 
     mainNavClose.onclick = e => {
@@ -51,9 +55,13 @@ if (bars) {
         mainContent.classList.remove('active');
         mainNav.classList.remove('active');
         mainNav.classList.add('end-active');
+        bars.classList.toggle('active')
         setTimeout(() => {
             mainNav.classList.remove('end-active');
         }, 300);
+        if (window.innerWidth <= 1200) {
+            document.querySelector('body').style.overflow = 'visible';
+        }
     }
 }
 
@@ -174,10 +182,115 @@ function menuHide() {
         mainNav.classList.remove('active');
         mainContent.classList.remove('active');
     }
+
+    if (indexMain.classList.contains('active')) {
+        bars.classList.add('active');
+    } else {
+        bars.classList.remove('active');
+    }
 }
 
 if (indexMain) {
     menuHide();
+}
+
+let accordion = document.querySelector('.accordion'),
+    accordionBtn = document.querySelector('.accordion_btn');
+
+if (accordion) {
+    accordionBtn.onclick = () => {
+        accordion.classList.toggle('hide');
+    }
+}
+
+let reviewStars = document.querySelectorAll('.review_form .star_group');
+
+if (reviewStars.length) {
+    reviewStars.forEach(el => {
+        let btns = el.querySelectorAll('button');
+        btns.forEach((btn, btnID) => {
+            btn.onclick = e => {
+                e.preventDefault();
+                btns.forEach((item, itemID) => {
+                    if (btnID >= itemID) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                })
+            }
+        })
+    })
+}
+
+let bookPageContent = document.querySelector('.book-page__content'),
+    themeBtns = document.querySelectorAll('.book-page__content .theme button'),
+    zoomIn = document.querySelector('.book-page__content .zoom-in'),
+    zoomOut = document.querySelector('.book-page__content .zoom-out'),
+    bookPageText = document.querySelectorAll('.book-page__content_text p');
+
+if (bookPageContent) {
+    themeBtns.forEach(el => {
+        el.onclick = () => {
+            themeBtns.forEach(btn => {
+                if (el != btn) {
+                    btn.classList.remove('active');
+                    bookPageContent.classList.remove(`${btn.getAttribute('data-theme')}-theme`);
+                } else {
+                    btn.classList.add('active');
+                    bookPageContent.classList.add(`${btn.getAttribute('data-theme')}-theme`);
+                }
+            })
+        }
+    })
+
+    zoomIn.onclick = () => {
+        bookPageText.forEach(el => {
+            let size = parseInt(window.getComputedStyle(el, null).getPropertyValue('font-size'))
+            el.style.fontSize = size + 2 + 'px';
+        })
+    }
+
+    zoomOut.onclick = () => {
+        bookPageText.forEach(el => {
+            let size = parseInt(window.getComputedStyle(el, null).getPropertyValue('font-size'))
+            el.style.fontSize = size - 2 + 'px';
+        })
+    }
+}
+
+let inp = document.querySelectorAll('.login_form .login_form_in input');
+
+if (inp.length) {
+    inp.forEach(el => {
+        el.onblur = () => {
+            if (el.value == "") {
+                el.classList.add('error')
+            } else {
+                el.classList.remove('error')
+            }
+        }
+    })
+}
+
+let formPassword = document.querySelectorAll('.form_password');
+
+if (formPassword.length) {
+    formPassword.forEach(el => {
+        let inp = el.querySelector('input[type="password"]'),
+            btn = el.querySelector('button');
+
+        btn.onclick = () => {
+            let type = inp.getAttribute('type');
+            if (type == 'password') {
+                inp.setAttribute('type', 'text');
+                el.classList.add('show');
+            } else {
+                inp.setAttribute('type', 'password');
+                el.classList.remove('show');
+            }
+        }
+    })
 }
 
 window.addEventListener('resize', function () {

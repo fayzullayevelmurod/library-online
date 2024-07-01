@@ -305,6 +305,27 @@ address {
   font-weight: 400;
   line-height: 19.6px;
   color: #6A6773;
+  position: relative;
+}
+.login_form form label button {
+  position: absolute;
+  right: 20px;
+  bottom: 12px;
+}
+.login_form form label button svg {
+  width: 20px;
+}
+.login_form form label button svg:nth-child(1) {
+  display: none;
+}
+.login_form form label.show button {
+  bottom: 15px;
+}
+.login_form form label.show button svg {
+  display: none;
+}
+.login_form form label.show button svg:nth-child(1) {
+  display: block;
 }
 .login_form form input {
   padding: 15px;
@@ -330,6 +351,9 @@ address {
 }
 .login_form form input:hover {
   border: 1px solid #6A6773;
+}
+.login_form form input.error {
+  border-color: #EB3232;
 }
 .login_form form .forget_password {
   color: #4867F6;
@@ -398,6 +422,12 @@ address {
 }
 .header__bars svg:last-child {
   display: none;
+}
+.header__bars.active svg {
+  display: none;
+}
+.header__bars.active svg:last-child {
+  display: block;
 }
 .header__search {
   position: relative;
@@ -598,6 +628,18 @@ address {
   font-weight: bold;
   text-decoration: underline;
 }
+.main_nav__content .accordion.hide {
+  background: transparent;
+}
+.main_nav__content .accordion.hide .accordion_btn svg {
+  transform: rotateZ(180deg);
+}
+.main_nav__content .accordion.hide .accordion_btn span svg {
+  transform: rotate(0);
+}
+.main_nav__content .accordion.hide .accordion_body {
+  display: none;
+}
 .main .main_content {
   width: 100%;
   transition: 0.3s ease;
@@ -793,6 +835,17 @@ address {
   color: #C9CADC;
   margin-bottom: 10px;
 }
+.book-cover .author_list {
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.book-cover .author_list a {
+  font-size: 14px;
+  line-height: 140%;
+  color: #C9CADC;
+}
 .book-cover .links {
   display: flex;
   align-items: center;
@@ -883,7 +936,7 @@ address {
 }
 .book-description__right_head {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 25px;
 }
 .book-description__right_head h3 {
@@ -1499,6 +1552,21 @@ address {
   padding: 10px 20px 20px;
   margin-bottom: 20px;
 }
+.book-page__content.grey-theme {
+  background: #DDD7CA;
+}
+.book-page__content.light-theme {
+  background: #F6F6F6;
+}
+.book-page__content.dark-theme {
+  background: #1D211F;
+}
+.book-page__content.dark-theme .book-page__content_head .theme p {
+  color: #fff;
+}
+.book-page__content.dark-theme .book-page__content_text p {
+  color: #fff;
+}
 .book-page__content_head {
   display: flex;
   align-items: center;
@@ -1688,6 +1756,9 @@ address {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.review_form .star_group button.active svg path {
+  fill: #F5A623;
 }
 .review_form .form_control {
   display: flex;
