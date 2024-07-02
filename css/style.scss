@@ -757,6 +757,7 @@ address {
                 &_body {
                     max-height: 494px;
                     overflow-y: scroll;
+                    transition: max-height 0.3s ease-in-out;
 
                     &::-webkit-scrollbar {
                         width: 4px;
@@ -800,7 +801,7 @@ address {
                         }
 
                         &_body {
-                            display: none;
+                            max-height: 0;
                         }
                     }
                 }
@@ -1051,6 +1052,10 @@ address {
     .main_title {
         color: #fff;
         margin-bottom: 10px;
+
+        br {
+            display: none;
+        }
     }
 
     .subtitle {
@@ -1978,6 +1983,15 @@ address {
                     border-radius: 50%;
                     border: 1px solid #DBDBDB;
                     flex-shrink: 0;
+                    background: #FFFFFF;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    svg {
+                        width: 10px;
+                        display: none;
+                    }
 
                     &.grey {
                         background: #DDD7CA;
@@ -1989,10 +2003,18 @@ address {
 
                     &.dark {
                         background: #1D211F;
+                        
+                        svg path {
+                            fill: #fff;
+                        }
                     }
 
                     &.active {
                         border-color: #A3D95D;
+                        
+                        svg {
+                            display: block;
+                        }
                     }
                 }
             }
@@ -2056,22 +2078,33 @@ address {
                     &__btn {
                         border: 1px solid #DBDBDB;
                         background: #fff;
-                        padding: 4px 4px 4px 10px;
+                        padding: 4px 4px 4px 45px;
                         display: flex;
                         align-items: center;
                         gap: 16px;
                         border-radius: 10px;
+                        position: relative;
 
-                        span {
+                        input {
                             color: #6A6773;
                             font-size: 16px;
                             line-height: 120%;
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            left: 0;
+                            top: 0;
+                            padding: 4px 40px 4px 10px;
+                            border: 0;
+                            outline: none;
+                            background: transparent;
                         }
                         
                         button {
                             display: flex;
                             align-items: center;
                             justify-content: center;
+                            position: relative;
                         }
                     }
                 }
@@ -2350,6 +2383,25 @@ address {
 
                 .reviews,.review_form.review_gray {
                     margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1500px) and (max-width: 1530px) {
+    .main {
+
+        &.active {
+
+            .main_content {
+
+                .book-cover {
+                    .main_title {
+                        br {
+                            display: block;
+                        }
+                    }
                 }
             }
         }

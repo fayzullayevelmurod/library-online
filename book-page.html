@@ -44,10 +44,26 @@
                         <div class="book-page__content_head">
                             <div class="theme">
                                 <p>Тема</p>
-                                <button data-theme="default" class="default active"></button>
-                                <button data-theme="grey" class="grey"></button>
-                                <button data-theme="light" class="light"></button>
-                                <button data-theme="dark" class="dark"></button>
+                                <button data-theme="default" class="default active">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                        <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/>
+                                    </svg>
+                                </button>
+                                <button data-theme="grey" class="grey">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                        <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/>
+                                    </svg>
+                                </button>
+                                <button data-theme="light" class="light">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                        <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/>
+                                    </svg>
+                                </button>
+                                <button data-theme="dark" class="dark">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                        <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/>
+                                    </svg>
+                                </button>
                             </div>
                             <div class="zoom">
                                 <button class="zoom-in">
@@ -84,7 +100,7 @@
                         <div class="pagination_left">
                             <p>Перейти <br> на страницу</p>
                             <div class="pagination_left__btn">
-                                <span>32</span>
+                                <input type="number" value="32">
                                 <button>
                                     <img src="./images/icons/arrow-right.svg" alt="">
                                 </button>

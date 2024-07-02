@@ -607,6 +607,7 @@ address {
 .main_nav__content .accordion_body {
   max-height: 494px;
   overflow-y: scroll;
+  transition: max-height 0.3s ease-in-out;
 }
 .main_nav__content .accordion_body::-webkit-scrollbar {
   width: 4px;
@@ -638,7 +639,7 @@ address {
   transform: rotate(0);
 }
 .main_nav__content .accordion.hide .accordion_body {
-  display: none;
+  max-height: 0;
 }
 .main .main_content {
   width: 100%;
@@ -828,6 +829,9 @@ address {
 .book-cover .main_title {
   color: #fff;
   margin-bottom: 10px;
+}
+.book-cover .main_title br {
+  display: none;
 }
 .book-cover .subtitle {
   font-size: 14px;
@@ -1592,6 +1596,14 @@ address {
   border-radius: 50%;
   border: 1px solid #DBDBDB;
   flex-shrink: 0;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.book-page__content_head .theme button svg {
+  width: 10px;
+  display: none;
 }
 .book-page__content_head .theme button.grey {
   background: #DDD7CA;
@@ -1602,8 +1614,14 @@ address {
 .book-page__content_head .theme button.dark {
   background: #1D211F;
 }
+.book-page__content_head .theme button.dark svg path {
+  fill: #fff;
+}
 .book-page__content_head .theme button.active {
   border-color: #A3D95D;
+}
+.book-page__content_head .theme button.active svg {
+  display: block;
 }
 .book-page__content_head .zoom {
   display: flex;
@@ -1656,21 +1674,32 @@ address {
 .book-page__content_pagination .pagination_left__btn {
   border: 1px solid #DBDBDB;
   background: #fff;
-  padding: 4px 4px 4px 10px;
+  padding: 4px 4px 4px 45px;
   display: flex;
   align-items: center;
   gap: 16px;
   border-radius: 10px;
+  position: relative;
 }
-.book-page__content_pagination .pagination_left__btn span {
+.book-page__content_pagination .pagination_left__btn input {
   color: #6A6773;
   font-size: 16px;
   line-height: 120%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding: 4px 40px 4px 10px;
+  border: 0;
+  outline: none;
+  background: transparent;
 }
 .book-page__content_pagination .pagination_left__btn button {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 .book-page__content_pagination .pagination_right {
   display: flex;
@@ -1875,6 +1904,11 @@ address {
   }
   .main.active .main_content .reviews, .main.active .main_content .review_form.review_gray {
     margin-left: 0;
+  }
+}
+@media (min-width: 1500px) and (max-width: 1530px) {
+  .main.active .main_content .book-cover .main_title br {
+    display: block;
   }
 }
 @media only screen and (max-width: 1500px) {
